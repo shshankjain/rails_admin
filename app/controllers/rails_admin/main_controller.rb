@@ -29,7 +29,8 @@ module RailsAdmin
         current_count = t.count
         @max = current_count > @max ? current_count : @max
         @count[t.pretty_name] = current_count
-        @most_recent_changes[t.pretty_name] = t.model.order("updated_at desc").first.try(:updated_at) rescue nil
+        ## don't need this, causing unnecessary errors in db logs
+	@most_recent_changes[t.pretty_name] = nil
       end
       render :dashboard
     end
