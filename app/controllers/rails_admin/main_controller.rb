@@ -30,7 +30,7 @@ module RailsAdmin
         @max = current_count > @max ? current_count : @max
         @count[t.pretty_name] = current_count
         ## don't need this, causing unnecessary errors in db logs
-	@most_recent_changes[t.pretty_name] = nil
+	      @most_recent_changes[t.pretty_name] = nil
       end
       render :dashboard
     end
